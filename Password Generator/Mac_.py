@@ -141,7 +141,7 @@ def get_value():
     enterAccountName = Entry(root, textvariable = account_id)
     enterAccountName.place(x=150, y=350)
     Font_tuple = ("Comic Sans MS", 10, "bold")
-    notShowing = Label(root, text = '* NOTE: IF OTP IS NOT SHOWING SHARED KEY MIGHT BE WRONG !')
+    notShowing = Label(root, text = '* NOTE: IF OTP IS NOT SHOWING SHARED KEY MIGHT BE WRONG !', font=Font_tuple)
     notShowing.place(x=20, y=550)
     get_key = Button(root, text = 'GET KEY!', font=(15), command = get_secret_key)
     get_key.place(x=150, y=500)
