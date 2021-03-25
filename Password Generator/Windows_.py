@@ -52,7 +52,7 @@ def write_json(data, filename='file.json'):
 
 def make_json():
     global added
-    Font_tuple = ("Comic Sans MS", 15, "bold")
+    Font_tuple = ("Comic Sans MS", 10, "bold")
     added = Label(root, text = 'SUCCESSFULLY ADDED !', font = Font_tuple)
     added.place(x=100, y = 500)
     a = entered_username.get()
@@ -86,9 +86,9 @@ def add_value():
     global key_value
     entered_username = StringVar()
     key_value = StringVar()
-    username = Label(root, text = 'ACCOUNT NAME:', font = (15))
+    username = Label(root, text = 'ACCOUNT NAME:')
     username.place(x=25, y=350)
-    shared_key = Label(root, text = 'SHARED KEY:', font=(15))
+    shared_key = Label(root, text = 'SHARED KEY:')
     shared_key.place(x=25, y=400)
     username_value = Entry(root, textvariable=entered_username, width=20)
     username_value.place(x=150, y=350)
@@ -115,7 +115,7 @@ def get_secret_key():
                 yourOTP = Label(root, text = 'OTP: ', font=Font_tuple)
                 yourOTP.place(x=100, y=400)
                 if my_token == '':
-                    onetimepassword = Label(root, text = 'WRONG SHARED KEY !', font=Font_tuple)
+                    onetimepassword = Label(root, text = 'WRONG SHARED KEY !')
                     onetimepassword.place(x=150, y=400)
                 else:
                     onetimepassword = Label(root, text = my_token, font=Font_tuple)
@@ -136,12 +136,12 @@ def get_value():
     global get_key
     global enterAccountName
     account_id = StringVar()
-    account_name = Label(root, text = 'ACCOUNT NAME:', font=(15))
+    account_name = Label(root, text = 'ACCOUNT NAME:')
     account_name.place(x=25, y=350)
     enterAccountName = Entry(root, textvariable = account_id)
     enterAccountName.place(x=150, y=350)
     Font_tuple = ("Comic Sans MS", 10, "bold")
-    notShowing = Label(root, text = '* NOTE: IF OTP IS NOT SHOWING SHARED KEY MIGHT BE WRONG !', font=Font_tuple)
+    notShowing = Label(root, text = '* NOTE: IF OTP IS NOT SHOWING SHARED KEY MIGHT BE WRONG !')
     notShowing.place(x=20, y=550)
     get_key = Button(root, text = 'GET KEY!', font=(15), command = get_secret_key)
     get_key.place(x=150, y=500)
@@ -152,13 +152,13 @@ if __name__=='__main__':
     root.title('Password Application')
     randomPassword = StringVar(root)
     password_size = StringVar(root, value='16')
-    Font_tuple = ("Comic Sans MS", 20, "bold")
+    Font_tuple = ("Comic Sans MS", 15, "bold")
     generate_random_password = Label(root, text = 'Generate Strong Random Password!', font = Font_tuple)
     generate_random_password.place(x=25, y=20)
     Pasword_length = Label(root, text = 'Password Length: ')
-    Pasword_length.place(x=50, y=112)
+    Pasword_length.place(x=50, y=108)
     generated_pass = Entry(root, textvariable = randomPassword, width=30)
-    generated_pass.place(x=60, y=70)
+    generated_pass.place(x=110, y=70)
     submit = Button(root, text='Generate', command = on_click)
     submit.place(x=150, y=150)
     length = Spinbox(root, from_ = 8, to_ = 120, textvariable = password_size , width = 8)
