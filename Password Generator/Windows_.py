@@ -53,8 +53,8 @@ def write_json(data, filename='file.json'):
 def make_json():
     global added
     Font_tuple = ("Comic Sans MS", 10, "bold")
-    added = Label(root, text = 'SUCCESSFULLY ADDED !', font = Font_tuple)
-    added.place(x=100, y = 500)
+    added = Label(root, text = 'SUCCESSFULLY ADDED !', font = Font_tuple,  bg='#424543', fg='white')
+    added.place(x=100, y = 450)
     a = entered_username.get()
     b = key_value.get()
     values = {
@@ -86,16 +86,16 @@ def add_value():
     global key_value
     entered_username = StringVar()
     key_value = StringVar()
-    username = Label(root, text = 'ACCOUNT NAME:')
+    username = Label(root, text = 'ACCOUNT NAME:', font =("Comic Sans MS",9 ,'bold'), bg='#424543', fg='white')
     username.place(x=25, y=350)
-    shared_key = Label(root, text = 'SHARED KEY:')
+    shared_key = Label(root, text = 'SHARED KEY:', font =("Comic Sans MS",9 ,'bold'), bg='#424543', fg='white')
     shared_key.place(x=25, y=400)
     username_value = Entry(root, textvariable=entered_username, width=20)
     username_value.place(x=150, y=350)
     shared_key_value = Entry(root, textvariable=key_value)
     shared_key_value.place(x=150, y=400)
-    add_button = Button(root, text = 'Add Account', command=make_json)
-    add_button.place(x=120, y = 450)
+    add_button = Button(root, text = 'Add Account', command=make_json, width=10, font = ("Comic Sans MS",10 ,'normal') ,bg='#a2a6a4', fg = 'white')
+    add_button.place(x=150, y=500)
     
 def get_secret_key():
     Font_tuple = ("Comic Sans MS", 15, "bold")
@@ -112,14 +112,10 @@ def get_secret_key():
                 global yourOTP
                 my_token = ''
                 my_token = otp.get_totp(b[i])
-                yourOTP = Label(root, text = 'OTP: ', font=Font_tuple)
-                yourOTP.place(x=100, y=400)
-                if my_token == '':
-                    onetimepassword = Label(root, text = 'WRONG SHARED KEY !')
-                    onetimepassword.place(x=150, y=400)
-                else:
-                    onetimepassword = Label(root, text = my_token, font=Font_tuple)
-                    onetimepassword.place(x=150, y=400)
+                yourOTP = Label(root, text = 'OTP: ', font=("Comic Sans MS", 12, "bold"), bg='#424543', fg = 'white')
+                yourOTP.place(x=120, y=450)
+                onetimepassword = Label(root, text = my_token, font=("Comic Sans MS", 12, "bold"), bg='#424543', fg = 'white')
+                onetimepassword.place(x=170, y=450)
         
 def get_value():
     try:
@@ -136,14 +132,14 @@ def get_value():
     global get_key
     global enterAccountName
     account_id = StringVar()
-    account_name = Label(root, text = 'ACCOUNT NAME:')
+    account_name = Label(root, text = 'ACCOUNT NAME:',  bg='#424543', fg='white')
     account_name.place(x=25, y=350)
     enterAccountName = Entry(root, textvariable = account_id)
     enterAccountName.place(x=150, y=350)
     Font_tuple = ("Comic Sans MS", 10, "bold")
-    notShowing = Label(root, text = '* NOTE: IF OTP IS NOT SHOWING SHARED KEY MIGHT BE WRONG !')
+    notShowing = Label(root, text = '* NOTE: IF OTP IS NOT SHOWING SHARED KEY MIGHT BE WRONG !',  bg='#424543', fg='white')
     notShowing.place(x=20, y=550)
-    get_key = Button(root, text = 'GET KEY!', font=(15), command = get_secret_key)
+    get_key = Button(root, text = 'GET KEY!', command = get_secret_key, width=10, font = ("Comic Sans MS",10 ,'normal') ,bg='#a2a6a4', fg = 'white')
     get_key.place(x=150, y=500)
 
 if __name__=='__main__':
@@ -157,18 +153,18 @@ if __name__=='__main__':
     generate_random_password.place(x=20, y=20)
     Pasword_length = Label(root, text = 'Password Length: ', bg = '#424543', fg = 'white', font = Font_tuple)
     Pasword_length.place(x=25, y=103)
-    generated_pass = Entry(root, textvariable = randomPassword, width=30, bg='black', fg='white')
+    generated_pass = Entry(root, textvariable = randomPassword, width=30, bg='white')
     generated_pass.place(x=110, y=70)
-    submit = Button(root, text='Generate', command = on_click)
+    submit = Button(root, text='Generate', command = on_click,  width=10, font = ("Comic Sans MS",10 ,'normal') ,bg='#a2a6a4', fg = 'white')
     submit.place(x=150, y=150)
     length = Spinbox(root, from_ = 8, to_ = 120, textvariable = password_size , width = 8)
     length.place(x=170, y=110)
 
-    twoFactor = Label(root, text = '2 Factor authenticator', font = Font_tuple)
+    twoFactor = Label(root, text = '2 Factor authenticator', font = ("Comic Sans MS",15 ,'bold'), bg='#424543', fg = 'white')
     twoFactor.place(x=90, y= 240)
-    add = Button(root, text = 'ADD ACCOUNT', command = add_value)
+    add = Button(root, text = 'ADD ACCOUNT', command = add_value, width=13,  font = ("Comic Sans MS",10 ,'normal') ,bg='#a2a6a4', fg = '#ffffff')
     add.place(x=60, y=300)
-    generate = Button(root, text = 'GENERATE', command = get_value)
+    generate = Button(root, text = 'GENERATE', command = get_value, width=10, font = ("Comic Sans MS",10 ,'normal') ,bg='#a2a6a4', fg = 'white')
     generate.place(x=230, y=300)
     root.resizable(False, False)
     root.mainloop()
