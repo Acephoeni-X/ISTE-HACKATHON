@@ -33,8 +33,7 @@ Technologies used:
 - used to secure any private email from hackers by making it end-to-end encrypted.
 - used to ensure safe protected browsing environment.
 
-
-
+# NOTE: Every folder has it's own ReadME file. Please read it carefully
 
 
 
