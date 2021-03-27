@@ -70,9 +70,18 @@ if __name__ == '__main__':
     to_content = Entry(root, textvariable=to_id, width = 25)
     to_content.place(x=250, y=150)
 
+    Subject = Label(root, text='Subject: ',font = ('Sans Serif', 15, 'bold'))
+    Subject.place(x=10, y=230)
+
+    global subject
+    subject = Text(root, width = 60, height = 2)
+    subject.place(x=100, y= 230)    
 
     body = Text(root, width = 100, height = 20)
-    body.place(x=10, y= 280)
+    body.place(x=10, y= 320)
+
+    Content = Label(root, text = 'Message: ',width = 60)
+    Content.place(x=100, y= 290)     
 
     send = Button(root, text='Send Mail', command = send_mail)
     send.place(x=320, y = 650)
