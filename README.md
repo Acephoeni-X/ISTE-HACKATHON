@@ -1,13 +1,17 @@
-ISTE-HACKATHON
+# ISTE-HACKATHON
 
-Team-TechGeeks
-Project title-CyberSafe
-Team members - Rishi Sharma, Vasu grover, Tushar Mukherjee, Kavya Mehra
+# Team-TechGeeks - " Cyber-Safe "
+## Team Members - Kavya Mehra, Rishi Sharma, Vasu Grover, Tushar Mukherjee.
 
-Introduction:
-- This project is intended for single users/organisations. 
-- They can browse safely using our secured browser, can detect infectious emails using our spam filter, create a fully secured account using our strong password generator and also secure your mails and messages. 
-- This project includes Two-factor authentication for further safety and privacy. 
+## Introduction:
+"Security used to be an inconvenience sometimes, but now it’s a necessity all the time."
+                                                                  - Martina Navratilova. 
+- This project is intended for single users/organisations.
+- They can browse safely using our secured browser, can filter Emails using our Spam filter.
+- They can create a fully secured account using our strong password generator.
+- This project includes Two-factor authentication for further safety and privacy.
+- User can also send AES encrypted end to end emails using our software.
+
 
 Features:
 - Secure mail sender 
