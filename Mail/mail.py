@@ -7,12 +7,15 @@ import smtplib
 global email_id
 
 def encryption(info):
-    BLOCK_SIZE = 128
+    BLOCK_SIZE = 16
     PADDING = '&'
     pad = lambda s : s+ (BLOCK_SIZE-len(s) % BLOCK_SIZE)*PADDING
     EncodeAES = lambda c, s:base64.b64encode(c.encrypt(pad(s)))
-    secret = 'Rishi2002'.ljust(16,'&')
-    print('Encryption key: ' , secret)
+    secret = enterKey.get()
+    secret = secret.ljust(16,'&')
+    print('Encryption key:\n' , secret)
+    P = Label(root, text = f'Your Secret key to decrypt the message:{secret}')
+    P.place(x=600, y = 705)    
     cipher = AES.new(secret)
     encoded = EncodeAES(cipher, info)
     return encoded
@@ -60,7 +63,7 @@ if __name__ == '__main__':
     password = Label(root, text = 'Password: ',font = ('Sans Serif', 15, 'bold'))
     password.place(x=350, y=80)
 
-    pass_place = Entry(root, textvariable = pass_id, width=25)
+    pass_place = Entry(root, textvariable = pass_id, width=25, show = '*')
     pass_place.place(x=450, y=80)
 
     global to_id
@@ -86,8 +89,10 @@ if __name__ == '__main__':
     send = Button(root, text='Send Mail', command = send_mail)
     send.place(x=320, y = 700)
 
-    enterKey = Text(root, height=2, width=20)
-    enterKey.place(x=350, y = 600)
+    global enterKey 
+    enterKey = StringVar()
+    EnterKey = Entry(root, width=20, textvariable = enterKey)
+    EnterKey.place(x=350, y = 600)
 
     enter_Key = Label(root, text = 'Enter a Passphrase to encrypt with(Not more than 16): ',font = ('Sans Serif', 12, 'bold'))
     enter_Key.place(x=10, y = 605)

@@ -2,10 +2,9 @@ from Crypto.Cipher import AES
 import base64
 import os
 
-def decrypt(encryptedString):
+def decrypt(encryptedString, key):
     PADDING = '&'
     DecodeAES = lambda c, e: c.decrypt(base64.b64decode(e))
-    key = 'Rishi2002'.ljust(16, '&')
     cipher = AES.new(key)
     decoded = DecodeAES(cipher, encryptedString)
     print(str(decoded).replace('&', ''))
@@ -18,4 +17,4 @@ def decrypt(encryptedString):
 # #         print(cipher.decrypt(enc))
 
 
-decrypt('pkMl/h3pbVjG5+bcnkArft6M80w/A4CdxK9RcHu7KeGYWe666BgKtTUaFiEDcak43OKki2LyguO7IMkjYN1Si9zipIti8oLjuyDJI2DdUovc4qSLYvKC47sgySNg3VKL3OKki2LyguO7IMkjYN1Si9zipIti8oLjuyDJI2DdUos=')
+decrypt('2O/Qh4za4JeiiXd1+As+/A==','kavya&&&&&&&&&&&')
