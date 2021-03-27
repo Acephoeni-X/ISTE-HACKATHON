@@ -1,7 +1,7 @@
 # ISTE-HACKATHON
 
 # Team-TechGeeks - " Cyber-Safe "
-## Team Members - Kavya Mehra, Rishi Sharma, Tushar Mukherjee, Vasu Grover,.
+## Team Members - Kavya Mehra, Rishi Sharma, Tushar Mukherjee, Vasu Grover.
 
 ## Introduction:
 "Security used to be an inconvenience sometimes, but now it’s a necessity all the time."
