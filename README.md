@@ -27,6 +27,13 @@ Technologies used:
 
 ## Installation instructions:
 
+## How this project will help:
+- used by a business firm to ensure safe sharing of private documents.
+- used by a individual while entering sensitive information like passwords.
+- used to secure any private email from hackers by making it end-to-end encrypted.
+- used to ensure safe protected browsing environment.
+
+
 
 
 
