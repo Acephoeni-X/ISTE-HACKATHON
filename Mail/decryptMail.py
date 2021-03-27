@@ -14,8 +14,11 @@ def decrypt():
 
     decrypted_body_Label = Label(root, text = 'Your Decrypted message is: ',width=60, font = ('Sans Serif', 15, 'bold'))
     decrypted_body_Label.place(x=10, y=400)
-
-    decrypted_body = Label(root, text = str(decoded).replace('&', ''),width=60)
+    decoded = str(decoded).replace('&', '')
+    decoded = decoded.replace('b\'', '')
+    decoded = decoded.replace('\n', '')
+    decoded = decoded.replace('\'', '')
+    decrypted_body = Label(root, text = decoded)
     decrypted_body.place(x=10, y=450)
 
 
