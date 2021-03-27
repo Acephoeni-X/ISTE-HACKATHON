@@ -15,7 +15,7 @@ def encryption(info):
     secret = secret.ljust(16,'&')
     print('Encryption key:\n' , secret)
     P = Label(root, text = f'Your Secret key to decrypt the message:{secret}')
-    P.place(x=600, y = 705)    
+    P.place(x=180, y = 550)    
     cipher = AES.new(secret)
     encoded = EncodeAES(cipher, info)
     return encoded
@@ -73,18 +73,11 @@ if __name__ == '__main__':
     to_content = Entry(root, textvariable=to_id, width = 25)
     to_content.place(x=250, y=150)
 
-    Subject = Label(root, text='Subject: ',font = ('Sans Serif', 15, 'bold'))
-    Subject.place(x=10, y=230)
-
-    global subject
-    subject = Text(root, width = 60, height = 2)
-    subject.place(x=100, y= 230)    
-
     body = Text(root, width = 100, height = 20)
-    body.place(x=10, y= 320)
+    body.place(x=10, y= 250)
 
     Content = Label(root, text = 'Message: ',width = 60)
-    Content.place(x=100, y= 290)     
+    Content.place(x=100, y= 220)     
 
     send = Button(root, text='Send Mail', command = send_mail)
     send.place(x=320, y = 700)
