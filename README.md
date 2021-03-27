@@ -10,10 +10,10 @@ Introduction:
 - This project includes Two-factor authentication for further safety and privacy. 
 
 Features:
-Secure mail sender 
-Secure Browser
-Strong Password Generator
-Spam filter
+-Secure mail sender 
+-Secure Browser
+-Strong Password Generator
+-Spam filter
 
 Technologies used:
 -Dependencies require for the software is only NPMs for Node Js while for installation.
