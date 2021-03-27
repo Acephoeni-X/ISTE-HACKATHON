@@ -50,18 +50,18 @@ if __name__ == '__main__':
     root.geometry('750x750')
 
     heading = Label(root, text = 'SECURE MAIL SENDER !', font = ('Sans Serif', 20, 'bold'))
-    heading.place(x=260, y=10)
+    heading.place(x=230, y=10)
 
     email_id = StringVar()
     enter_email = Label(root, text = 'Email: ', font = ('Sans Serif', 15, 'bold'))
-    enter_email.place(x=10, y=80)
+    enter_email.place(x=8, y=80)
 
     email = Entry(root, textvariable = email_id, width=25)
     email.place(x=70, y=80)
 
     pass_id = StringVar()
     password = Label(root, text = 'Password: ',font = ('Sans Serif', 15, 'bold'))
-    password.place(x=350, y=80)
+    password.place(x=320, y=80)
 
     pass_place = Entry(root, textvariable = pass_id, width=25, show = '*')
     pass_place.place(x=450, y=80)
@@ -87,7 +87,7 @@ if __name__ == '__main__':
     EnterKey = Entry(root, width=20, textvariable = enterKey)
     EnterKey.place(x=350, y = 600)
 
-    enter_Key = Label(root, text = 'Enter a Passphrase to encrypt with(Not more than 16): ',font = ('Sans Serif', 12, 'bold'))
+    enter_Key = Label(root, text = 'Enter a Passphrase to encrypt with(Not more than 16): ',font = ('Sans Serif', 8, 'bold'))
     enter_Key.place(x=10, y = 605)
 
     root.resizable(False, False)
