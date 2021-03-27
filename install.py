@@ -8,3 +8,11 @@ except:
 import subprocess, sys
 p = subprocess.Popen('Powershell.exe -Command ./tor.exe /S /v/qn')
 p.communicate()
+
+import json
+
+boilerplate = {
+    "account":[]
+}
+with open('Password Generator/file.json' , 'w') as f:
+    json.dump(boilerplate, f, indent=4)
