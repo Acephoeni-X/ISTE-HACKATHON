@@ -124,7 +124,7 @@ while (True):
 
     # Change Path to Chrome Driver Path (or move your ChromeDriver into the project folder)
     options = webdriver.ChromeOptions()
-    driver = webdriver.Chrome(executable_path='./driver/chromedriver', chrome_options=options)
+    driver = webdriver.Chrome(executable_path='Secure Browser/chromedriver.exe', chrome_options=options)
 
     url = 'http://protonmail.com/signup'
 

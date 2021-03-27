@@ -16,3 +16,5 @@ boilerplate = {
 }
 with open('Password Generator/file.json' , 'w') as f:
     json.dump(boilerplate, f, indent=4)
+
+#Set-ExecutionPolicy RemoteSigned
