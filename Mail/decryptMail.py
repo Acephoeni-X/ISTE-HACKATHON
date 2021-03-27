@@ -27,7 +27,7 @@ if __name__ == '__main__':
     root.geometry('700x700')
     root.title('Decrypter')
 
-    keyPhrase = Label(root, text = 'Enter the key: ', font = ('Sans Serif', 15, 'bold'))
+    keyPhrase = Label(root, text = 'Enter the key: ', font = ('Sans Serif', 10, 'bold'))
     keyPhrase.place(x=20, y=80)
 
     global key
@@ -35,16 +35,16 @@ if __name__ == '__main__':
     keyEntry = Entry(root, textvariable = key, width = 50)
     keyEntry.place(x=150, y=80)
 
-    encrypted_body_label = Label(root, text = 'Enter the Encrypted Message: ', font = ('Sans Serif', 15, 'bold'))
+    encrypted_body_label = Label(root, text = 'Enter the Encrypted Message: ', font = ('Sans Serif', 10, 'bold'))
     encrypted_body_label.place(x=10, y=200)
 
     global  encrypted_body
 
-    encrypted_body = Text(root, width=60, height = 10)
+    encrypted_body = Text(root, width=50, height = 10)
     encrypted_body.place(x=250, y=200)
 
     decrypt_button = Button(root, text = 'Decrypt', command = decrypt)
-    decrypt_button.place(x=250, y=350)
+    decrypt_button.place(x=250, y=400)
 
     root.resizable(False, False)
     root.mainloop()

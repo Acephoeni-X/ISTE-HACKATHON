@@ -33,7 +33,7 @@ if __name__ == '__main__':
     root.geometry("300x400")
     root.title('Anony Browser')
     root.configure(bg='#424543')
-    text = tkinter.Label(root, text = "Want To Go UnderGround ?", font = ("Helvetica",15,"bold"), bg='#424543', fg='white')
+    text = tkinter.Label(root, text = "Want To Go UnderGround ?", font = ("Helvetica",10,"bold"), bg='#424543', fg='white')
     text.place(x=60, y=50)
     startTor = tkinter.Button(root, text ="Start Tor", command = tor, bg='#424543',fg='white')
     startTor.place(x=100, y=150)
