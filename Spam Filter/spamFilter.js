@@ -8,38 +8,27 @@ const { parse } = require('path');
 
 const chalk = require('chalk');
  
-// Wait for user's response.
+
 var userName = readlineSync.question(chalk.green('May I have your name? \n\n'));
 console.log(chalk.blueBright('Hi ' + chalk.yellow.bold(userName) + '!\n\n\n'));
 console.log(chalk.yellowBright("Welcome to sekureMail,\nHere you can automatically delete unwanted or spam mail sent to you through keywords, sender mail ID, or for attachments.\nNOTE! : Set only the keywords, mail Id or attachment which you seems to be a spam.\n\n\n"));
 
 
-// If modifying these scopes, delete token.json.
+
 const SCOPES = ['https://www.googleapis.com/auth/gmail.settings.basic'];
-// The file token.json stores the user's access and refresh tokens, and is
-// created automatically when the authorization flow completes for the first
-// time.
 const TOKEN_PATH = 'token.json';
 
-// Load client secrets from a local file.
+
 fs.readFile('credentials.json', (err, content) => {
   if (err) return console.log('Error loading client secret file:', err);
-  // Authorize a client with credentials, then call the Gmail API.
   authorize(JSON.parse(content), createFilter);
 });
 
-/**
- * Create an OAuth2 client with the given credentials, and then execute the
- * given callback function.
- * @param {Object} credentials The authorization client credentials.
- * @param {function} callback The callback to call with the authorized client.
- */
 function authorize(credentials, callback) {
   const {client_secret, client_id, redirect_uris} = credentials.installed;
   const oAuth2Client = new google.auth.OAuth2(
       client_id, client_secret, redirect_uris[0]);
 
-  // Check if we have previously stored a token.
   fs.readFile(TOKEN_PATH, (err, token) => {
     if (err) return getNewToken(oAuth2Client, callback);
     oAuth2Client.setCredentials(JSON.parse(token));
@@ -47,12 +36,6 @@ function authorize(credentials, callback) {
   });
 }
 
-/**
- * Get and store new token after prompting for user authorization, and then
- * execute the given callback with the authorized OAuth2 client.
- * @param {google.auth.OAuth2} oAuth2Client The OAuth2 client to get token for.
- * @param {getEventsCallback} callback The callback for the authorized client.
- */
 function getNewToken(oAuth2Client, callback) {
   const authUrl = oAuth2Client.generateAuthUrl({
     access_type: 'offline',
@@ -68,7 +51,6 @@ function getNewToken(oAuth2Client, callback) {
     oAuth2Client.getToken(code, (err, token) => {
       if (err) return console.error('Error retrieving access token', err);
       oAuth2Client.setCredentials(token);
-      // Store the token to disk for later program executions
       fs.writeFile(TOKEN_PATH, JSON.stringify(token), (err) => {
         if (err) return console.error(err);
         console.log('Token stored to', TOKEN_PATH);
@@ -77,16 +59,6 @@ function getNewToken(oAuth2Client, callback) {
     });
   });
 }
-
-/**
- * Lists the labels in the user's account.
- *
- * @param {google.auth.OAuth2} auth An authorized OAuth2 client.
- */
-
-
-
-// Function to call Gmail filter API 
 
 function createFilter(auth){
     var gmail = google.gmail('v1');
@@ -124,14 +96,9 @@ function createFilter(auth){
       resource: data,
     }, function(err, result) {
       if (err) {
-        // console.log( err);
-        // console.log(err.response.status)
         console.log(chalk.redBright("\n\nYour filter has already been created!\n\n"));
       } else {
-        // console.log(result.status);
         console.log(chalk.yellowBright(`\n\nCongrats! Your filter is just created.\n\n`));
-        // console.log(response);
-        // console.log(result);
         callback( result );
       }
     });
