@@ -20,11 +20,11 @@ Features:
 - Spam filter
 
 Technologies used:
-- Dependencies require for the software is only NPMs for Node Js while for installation.
-- Nodejs
+- Dependencies require for the software is only NPMs for Node JS.
+- NodeJS
 - Python
 
-Installation instructions:
+## Installation instructions:
 
 
 
