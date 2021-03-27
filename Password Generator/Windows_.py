@@ -146,6 +146,7 @@ if __name__=='__main__':
     root = Tk()
     root.geometry('400x600')
     root.configure(background = '#424543')
+    root.title('Password Application')
     randomPassword = StringVar(root)
     password_size = StringVar(root, value='16')
     Font_tuple = ("Comic Sans MS",12 ,'bold')
