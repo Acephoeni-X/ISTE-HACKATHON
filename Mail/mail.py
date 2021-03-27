@@ -84,6 +84,13 @@ if __name__ == '__main__':
     Content.place(x=100, y= 290)     
 
     send = Button(root, text='Send Mail', command = send_mail)
-    send.place(x=320, y = 650)
+    send.place(x=320, y = 700)
+
+    enterKey = Text(root, height=2, width=20)
+    enterKey.place(x=350, y = 600)
+
+    enter_Key = Label(root, text = 'Enter a Passphrase to encrypt with(Not more than 16): ',font = ('Sans Serif', 12, 'bold'))
+    enter_Key.place(x=10, y = 605)
+
     root.resizable(False, False)
     root.mainloop()
