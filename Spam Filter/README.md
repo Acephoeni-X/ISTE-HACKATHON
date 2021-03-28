@@ -1,7 +1,7 @@
 # Spam Filter
 
 ## How to use this?
-
+- Installation of NODE JS is must in your PC, ignore if it is already.
 - First type the command: `npm init` on terminal.
 - After install npm, type: `npm install googleapis@39 --save` on terminal.
 - After that install the required modules: `npm i readline-sync`, `npm i chalk`
